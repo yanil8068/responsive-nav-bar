@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responside nav  bar new
+    </title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        body{
+            font-family: montserrat;
+        }
+        nav{
+            height: 80px;
+            width: 100%;
+            background: #34495e;
+        }
+        label.logo{
+            font-size: 35px;
+            font-weight: bold;
+            color: white;
+            padding: 0 100px;
+            line-height: 80px;
+        }
+        nav ul{
+            float: right;
+            margin-right: 40px;
+        }
+        nav li{
+            display: inline-block;
+            margin: 0 8px;
+            line-height: 80px;
+        }
+        nav a{
+            color: white;
+            font-size: 18px;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            padding: 7px 10px;
+            border-radius: 3px;
+        }
+        a.active, a:hover{
+            border: 1px solid white;
+            transition: .5s;
+        }
+        nav #icon{
+            color: white;
+            font-size: 30px;
+            line-height: 80px;
+            float: right;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+        @media (max-width: 1048px){
+            label.logo{
+                font-size: 32px;
+            padding-left: 60px;
+            }
+            nav ul{
+                margin-right: 20px;
+            }
+            nav a{
+                font-size: 17px;
+            }
+        }
+        @media  screen and (max-width: 909px){
+            nav #icon{
+                display: block;
+            }
+            nav ul{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: #2f3640;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+            nav li{
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+            nav a{
+                font-size: 20px;
+            }
+            a.active,a:hover{
+                border: none;
+                color: #3498db;
+            }
+            nav ul.show{
+                left: 0;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <label class="logo">DesignX</label>
+        <ul class="ul">
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">contact</a></li>
+            <li><a href="#">feedback</a></li>
+
+        </ul>
+        <label class="iconn" id="icon">&#9776;</label>
+    </nav>
+    <script>
+        var icon = document.getElementById('icon');
+        var navUl = document.querySelector('nav ul');
+        icon.addEventListener('click', function() {
+            navUl.classList.toggle('show');
+        });
+</script>
+    
+</body>
+</html>
